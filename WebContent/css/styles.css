@@ -1,0 +1,148 @@
+@CHARSET "UTF-8";
+
+html body {
+	background-color: #f2f2f2;
+}
+
+.container {
+	margin: auto;
+	background-color: white;
+	box-shadow: 0px 5px 5px #888888;
+	position: relative;
+	bottom: 20px;
+}
+
+.row {
+	background-color: white;
+	padding-top: 20px;
+	padding-left: 20px;
+	margin: 10px;
+}
+
+#logged-user {
+	position: relative;
+	color: white;
+	float: right;
+	text-decoration: none;
+	top: 0px;
+}
+
+#logged-user a:hover {
+	background-color: none;
+}
+
+/* Hover over buttons in nav bar */
+.nav > li > a:hover {
+	background-color: black !important;
+}
+
+#img-icon {
+	position: relative;
+	right: 4px;
+	bottom: 1px;
+}
+
+.nav > li > a {
+	padding-top: 15px !important;
+	padding-bottom: 15px !important;
+}
+
+/* .table th { */
+/* 	position: relative; */
+/* 	font-size: 14px; */
+/* 	left: 100px; */
+/* } */
+
+#movie-img {
+	width: 214px;
+	height: 317px;
+	border: 1px solid #eee;
+	float: left;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	clear: both;
+}
+
+#movie-title h2 {
+	font-family: 'Slabo 27px', serif;
+	margin-left: 20px;
+	float: left;
+}
+
+#year-genre {
+	float: left;
+	font-family: 'Slabo 27px', serif;
+	border: 1px solid red;
+	display: inline;
+}
+
+.row {
+	font-family: 'Slabo 27px', serif;
+	font-size: 16px;
+	padding-top: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+}
+#row {
+	background-color: #f2f2f2;
+	width: 650px;
+	padding-top: 6px;
+}
+#row-director {
+/* 	background-color: #f2f2f2; */
+	width: 650px;
+	padding-top: 6px;
+}
+#row-director span {
+	font-family: 'Helvetica';
+	font-size: 14px;
+}
+#row-description {
+	background-color: #fff;
+	width: 650px;
+	padding-top: 6px;
+}
+
+#row-rate {
+	background-color: #ffdd00;
+	width: 650px;
+	padding-top: 6px;
+	padding-bottom: 3px;
+}
+
+#sep-line {
+	border: 0.5px solid #f6f6f6;
+	margin-bottom: 10px;
+	width: 635px;
+}
+
+/* Search Form */
+.row-search {
+	float: left;
+	position: relative;
+	right: 90px;
+}
+/* Search Form */
+.row-search .form-control {
+	border: 1px solid #000;
+	color: #FFF;
+	background-color: #000 !important;
+	font-family: "Slabo 27px";
+	font-size: 16px;
+	border-radius: 0px;
+	border-color: #000 !important;
+/* 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset; */
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) inset !important;
+	transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+/* Search Form */
+.btn-default {
+    color: #333;
+    background-color: #000 !important;
+    border-color: #000 !important;
+}
+/* Search Form */
+.btn {
+	border-radius: 0px !important;
+}
+

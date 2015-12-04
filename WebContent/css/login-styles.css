@@ -1,0 +1,44 @@
+.form-container {
+	width: 400px;
+	margin-left: 25px;
+/*	font-family: 'Slabo 27px', serif; */
+	font-family: Helvetica;
+	font-size: 16px;
+	color: #815c48;
+	background-color: white;
+	margin: auto;
+	margin-top: 100px;
+	padding: 20px;
+	border-radius: 15px;
+	box-shadow: 0 2px 25px #686868;
+}
+
+.form-container h4 {
+	color: black;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.form-group input {
+	background-color: white;
+	height: 40px;
+	font-size: 16px;
+	border: none;
+	box-shadow: none;
+	transition: none;
+}
+
+.form-group .btn-block {
+	height: 40px;
+	font-size: 16px;
+}
+
+#separation-line {
+	border: 1px solid #f6f6f6;
+	margin-bottom: 10px;
+}
+
+#error-login {
+	color: red;
+	margin-bottom: 15px;
+}

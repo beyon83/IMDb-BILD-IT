@@ -1,0 +1,143 @@
+html body {
+	background-color: #f2f2f2;
+}
+
+.container-fluid {
+	background-color: black;
+	border-radius: 0px;
+}
+
+.form-wrapper {
+	position: relative;
+	bottom: 20px;
+}
+
+.navbar li a {
+	color: white;
+/*	font-family: 'Open sans condensed', serif; */
+	font-size: 14px;
+/*	font-weight: bold; */
+}
+
+.navbar-brand {
+/*	font-family: 'Open Sans Condensed'; */
+	font-size: 16px;
+	color: #e3e3e3;
+
+}
+
+.form-container {
+	width: 400px;
+	margin-left: 25px;
+/*	font-family: 'Slabo 27px', serif; */
+	font-family: Helvetica;
+	font-size: 16px;
+	color: #815c48;
+	background-color: white;
+	margin: auto;
+	margin-top: 10px;
+	padding: 20px;
+	padding-bottom: 0px;
+	border-radius: 15px;
+	box-shadow: 0 2px 25px #686868;
+}
+
+.form-container h4 {
+	color: black;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.form-group input {
+	background-color: white;
+	height: 40px;
+	font-size: 16px;
+	border: none;
+	box-shadow: none;
+	transition: none;
+}
+
+.form-group .btn-block {
+	height: 40px;
+	font-size: 16px;
+}
+
+#separation-line {
+	border: 1px solid #f6f6f6;
+/*	margin-bottom: 10px; */
+}
+
+#h4-title {
+	
+}
+
+.col-sm-9 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.col-sm-9 label {
+	position: relative;
+	right: 30px;
+	font-weight: normal;
+	padding-left: 20px;
+	color: #797979;
+}
+
+.nav {
+/*	border: 1px solid red; */ 
+/*	width: 600px; */
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+#logged-in-user {
+	color: white;
+/*	border: 1px solid red; */	
+	float: right;
+	top: 3px;
+	text-decoration: none;
+}
+
+#img-icon {
+	position: relative;
+	right: 5px;
+	bottom: 1px;
+}
+
+/* Validation form error-messages for JQuery */
+.error {
+	color: #FF4747;
+	font-weight: normal;
+	font-size: 15px;
+}
+
+/* Search Form */
+.row-search {
+	float: left;
+	position: relative;
+	right: 90px;
+}
+/* Search Form */
+.row-search .form-control {
+	border: 1px solid #000;
+	color: #FFF;
+	background-color: #000 !important;
+	font-family: "Slabo 27px";
+	font-size: 16px;
+	border-radius: 0px;
+	border-color: #000 !important;
+/* 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset; */
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) inset !important;
+	transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+/* Search Form */
+.btn-default {
+    color: #333;
+    background-color: #000 !important;
+    border-color: #000 !important;
+}
+/* Search Form */
+.btn {
+	border-radius: 0px !important;
+}
