@@ -51,11 +51,26 @@ public class FetchMovies extends HttpServlet {
 		/** Instantiate Services object */
 		Services service = new Services();
 		
+		int page = 1; // set page = 1 by default
+		
+		if(request.getParameter("page") != null) {
+			/** If page number is pressed, set page = that number of page */
+			page = Integer.valueOf(request.getParameter("page"));
+		}
+		
+		request.setAttribute("currentPage", page);
+		
 		/** Assign getMovies() method's results to the ArrayList */
-		ArrayList<Movie> movie = service.getMovies(mysqlConnect);
+		ArrayList<Movie> movie = service.getMovies(page - 1, mysqlConnect);
+		
+		/** Get pagination links */
+		ArrayList<Integer> paginationList = service.paginationList(page);
+		request.setAttribute("paginationList", paginationList);
 		
 		/** Set request attribute object for movies ArrayList */
 		request.setAttribute("movies", movie);
+		
+		request.setAttribute("pages", Movie.getNumberOfPages());
 		
 		/** Redirect user to the movies.jsp page */
 		request.getRequestDispatcher("movies.jsp").forward(request, response);

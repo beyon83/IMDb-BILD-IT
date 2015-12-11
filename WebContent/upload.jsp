@@ -86,7 +86,7 @@
 				</div>
 				<div id="separation-line"></div>
 				<div class="form-group" style="margin-bottom: 0px; position: relative; top: 10px;">
-					<input type="text" name="description" class="form-control" placeholder="Description" required /><br />
+					<textarea name="description" class="form-control" placeholder="Description" required></textarea>
 				</div>
 				<div id="separation-line"></div>
 				<div class="form-group" style="margin-bottom: 0px; position: relative; top: 10px;">

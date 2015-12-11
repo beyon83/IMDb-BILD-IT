@@ -73,6 +73,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th>#</th>
 					<th>Movie Title</th>
 					<th>Year</th>
 					<th>Genre</th>
@@ -86,7 +87,7 @@
 			<tbody>
 				<c:forEach items="${movies}" var="movie">
 					<tr>
-<!-- 					<td><img src="" style="width: 80px;" /></td> -->
+						<td><c:out value="${movie.rowNumber}." /></td>
 						<td><a href="ShowMovie?id=${movie.id}"><c:out value="${movie.movieTitle}" /></a></td>
 						<td><c:out value="${movie.year}" /></td>
 						<td><c:out value="${movie.genre}" /></td>
@@ -95,12 +96,20 @@
 						<td><c:out value="${movie.cast}" /></td>
 						<td><c:out value="${movie.director}" /></td>
 						<td><c:out value="${movie.description}" /></td>
-	<%-- 				<td><c:out value="${movie.photo}" /></td> --%>
-	<!-- 		        <img src="c:/users/beyon/images/2.jpg" /><br /><br /> -->
 					</tr>
 				</c:forEach>	
 			</tbody>
 		</table>
+		<ul class="pagination">
+			<c:forEach items="${paginationList}" var="page">
+				<c:if test="${page != currentPage}">
+					<li><a href="FetchMovies?page=${page}"><c:out value="${page}" /></a></li>
+				</c:if>
+				<c:if test="${page == currentPage}">
+					<li class="active"><a href="FetchMovies?page=${currentPage}"><c:out value="${currentPage}" /></a></li>
+				</c:if>
+			</c:forEach>
+  		</ul>
 	</div>
 	<c:if test="${admin != null}">
 		<div class="container" style="margin-top: 2px; padding-top: 8px;">

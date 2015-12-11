@@ -7,6 +7,8 @@ import java.sql.Blob;
 public class Movie {
 	
 	private int id;
+	private int rowNumber;
+	private static int numberOfPages;
 	private String movieTitle;
 	private int year;
 	private String genre;
@@ -23,7 +25,9 @@ public class Movie {
 		
 	}
 	
-	public Movie(int id, String movieTitle, int year, String genre, double rating, int votes, String cast, String director, String description) {
+	public Movie(int id, int rowNumber, String movieTitle, int year, String genre, double rating, int votes, String cast, String director, String description) {
+		this.id = id;
+		this.rowNumber = rowNumber;
 		this.movieTitle = movieTitle;
 		this.year = year;
 		this.genre = genre;
@@ -32,7 +36,18 @@ public class Movie {
 		this.cast = cast;
 		this.director = director;
 		this.description = description;
+	}
+	
+	public Movie(int id, String movieTitle, int year, String genre, double rating, int votes, String cast, String director, String description) {
 		this.id = id;
+		this.movieTitle = movieTitle;
+		this.year = year;
+		this.genre = genre;
+		this.rating = rating;
+		this.votes = votes;
+		this.cast = cast;
+		this.director = director;
+		this.description = description;
 	}
 	
 	public Movie(String movieTitle, String cast, String director) {
@@ -41,12 +56,32 @@ public class Movie {
 		this.director = director;
 	}
 	
+	public Movie(int rowNumber) {
+		this.rowNumber = rowNumber;
+	}
+	
 	public int getId() {
 		return id;
 	}
 	
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public int getRowNumber() {
+		return rowNumber;
+	}
+
+	public void setRowNumber(int rowNumber) {
+		this.rowNumber = rowNumber;
+	}
+
+	public static int getNumberOfPages() {
+		return numberOfPages;
+	}
+
+	public static void setNumberOfPages(int numberOfPages) {
+		Movie.numberOfPages = numberOfPages;
 	}
 
 	public String getMovieTitle() {

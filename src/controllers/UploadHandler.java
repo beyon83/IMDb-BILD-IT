@@ -74,8 +74,13 @@ public class UploadHandler extends HttpServlet {
 		/** Invoke uploadMovie() method, and pass arguments to it */
 		service.uploadMovie(movieTitle, movieYear, genre, description, cast, director, inputStream, mysqlConnect);
 		
+		int page = 1;
+		if(request.getParameter("page") != null) {
+			page = Integer.valueOf(request.getParameter("page"));
+		}
+		
 		/** Assign getMovies() method's results to the ArrayList */
-		ArrayList<Movie> movie = service.getMovies(mysqlConnect);
+		ArrayList<Movie> movie = service.getMovies(page, mysqlConnect);
 		
 		/** Set request attribute object for movies ArrayList */
 		request.setAttribute("movies", movie);

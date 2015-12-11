@@ -72,11 +72,11 @@
 			<div class="row">
 	  			<div class="col-sm-9" style="margin-left: 15px;">
 		   		 	<h2><c:out value="${mov.movieTitle}" /><br /></h2>
-		    		<div class="row" id="row">
+		    		<div class="row" id="row" style="line-height: 1;">
 			      		<div class="col-xs-2 col-sm-2" style="width: 120px;">
 			       			<label>Year:</label> <c:out value="${mov.year}" />
 			      		</div>
-			     		 <div class="col-xs-3 col-sm-3" style="width: 170px;">
+			     		 <div class="col-xs-3 col-sm-3" style="width: 170px; padding-bottom: 5px;">
 			        		<label>Genre:</label> <c:out value="${mov.genre}" />
 			      		</div>
 			      		<div class="col-xs-2 col-sm-2" style="width: 120px;">
@@ -84,6 +84,9 @@
 			      		</div>
 			      		<div class="col-xs-2 col-sm-2" style="width: 120px;">
 			        		<label>Votes:</label> <c:out value="${mov.votes}" />
+			      		</div>
+			      		<div class="col-xs-2 col-sm-2" style="width: 140px;">
+			        		<label>Your rating: </label> <c:out value="${yourRating}" />
 			      		</div>
 		   		 	</div>
 		   		 	<div class="row" id="row-description">
@@ -140,14 +143,14 @@
 								            <input type="radio" name="rating" value="10" class="star" data-toggle="tooltip" title="10">
 											<%-- <a href="ShowMovie?id=${mov.id}&vote">Submit</a> --%>
 								            <input type="submit" value="Submit"><br />
-								            <span><c:out value="${alreadyRated}" /></span>
-								            <span><c:out value="${successfullyRated}" /></span>
 								        </form>
 			       					</c:otherwise>
 			       				</c:choose>
 			       			</span>
 			      		</div>
 		   		 	</div>
+		   		 	<span class="rating-message" id="alreadyRated"><c:out value="${alreadyRated}" /></span>
+					<span class="rating-message" id="successfullyRated"><c:out value="${successfullyRated}" /><span style="color: green; font-weight: bold;"><c:out value="${ratingNumber}" /></span></span>
 	  			</div>
 			</div>
 		</c:forEach>
@@ -156,7 +159,13 @@
 <script>
 
 	$(document).ready(function() {
+		/* Tooltip */
 	    $('[data-toggle="tooltip"]').tooltip();
+	    
+	    /* Rating message */
+	    $('#alreadyRated').delay(2500).fadeOut(500);
+	    $('#successfullyRated').delay(2500).fadeOut(500);
+	    
 	});
 
 </script>

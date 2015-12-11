@@ -67,7 +67,7 @@
 	<div class="container">
 		<c:choose>
 	  		<c:when test="${sessionUser != null or admin != null}">
-	  			<c:redirect url="/FetchMovies"/>
+	  			<c:redirect url="/FetchMovies?page=1"/>
 		   	</c:when>
 			<c:otherwise>
 				<h4>Welcome Guest!</h4>

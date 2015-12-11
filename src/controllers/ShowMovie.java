@@ -46,6 +46,9 @@ public class ShowMovie extends HttpServlet {
 		/** Create HttpSession object */
 		HttpSession session = request.getSession();
 		
+		/** Obtain session's username */
+		String userName = (String) session.getAttribute("sessionUser");
+		
 		/** Instantiate Services object */
 		Services service = new Services();
 		
@@ -53,22 +56,29 @@ public class ShowMovie extends HttpServlet {
 		String strID = request.getParameter("id");
 		int movieId = Integer.valueOf(strID); // parse it into int
 		
+		if(request.getParameter("id") != null) {
+			int userId = service.getUserId(userName, mysqlConnect);
+			int yourRating = service.getUsersRating(userId, movieId, mysqlConnect);
+			request.setAttribute("yourRating", yourRating); // Show current user's rate for this movie
+		}
+		
 		/** Execute this if-statement block if "ShowMovie?vote=" is submitted */
 		if(request.getParameter("rating") != null) {
 			String rating = request.getParameter("rating");
 			int ratingNumber = Integer.valueOf(rating);
-			/** Obtain session's username */
-			String userName = (String) session.getAttribute("sessionUser");
 			/** Obtain logged user's ID */
 			int userId = service.getUserId(userName, mysqlConnect);
+			int yourRating = service.getUsersRating(userId, movieId, mysqlConnect);
 			if(service.isAlreadyVoted(userId, movieId, mysqlConnect) == false) {
 				/** Submit vote to the "user_votes" - table */
-				service.vote(userId, movieId, mysqlConnect);
+				service.vote(userId, movieId, ratingNumber, mysqlConnect);
 				service.updateVotes(movieId, ratingNumber, mysqlConnect);
-				request.setAttribute("successfullyRated", "You gave this movie a rating +" + ratingNumber);
+				request.setAttribute("successfullyRated", "You gave this movie a rating +");
+				request.setAttribute("ratingNumber", ratingNumber);
 			} else {
 				request.setAttribute("alreadyRated", "You have already submitted your rating for this movie.");
 			}
+			request.setAttribute("yourRating", yourRating); // Show current user's rate for this movie
 		}
 		
 		/** Invoke showMovie() method and assign it to the getMovie object */
