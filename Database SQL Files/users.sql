@@ -31,9 +31,9 @@ CREATE TABLE `users` (
   `gender` varchar(45) DEFAULT NULL,
   `registrationDate` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `isAdmin` varchar(45) DEFAULT NULL,
+  `isAdmin` varchar(45) DEFAULT 'false',
   PRIMARY KEY (`userID`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','Bojan','Aleksic','1234','male',NULL,'bojan.aleksich@gmail.com','true'),(2,'testUser','testUser','testUser','testUser','male','11/22/15 6:08 PM','testUser','false'),(3,'sithLord','Darth','Vader','1234','male','11/24/15 12:42 AM','fdafda@fdafda.com','false'),(5,'guest1','Firstname','Lastname','123456',NULL,'12/3/15 6:46 PM','guest@mail.com',NULL),(6,'guest2','Firstname','Lastname','123456',NULL,'12/3/15 6:49 PM','guest2@mail.com',NULL),(7,'guest3','test','test','123456',NULL,'12/3/15 6:51 PM','fdafda@dfda.com',NULL);
+INSERT INTO `users` VALUES (1,'admin','Bojan','Aleksic','1234','male',NULL,'bojan.aleksich@gmail.com','true'),(2,'testUser','testUser','testUser','testUser','male','11/22/15 6:08 PM','testUser','false'),(3,'sithLord','Darth','Vader','1234','male','11/24/15 12:42 AM','fdafda@fdafda.com','false'),(5,'guest1','Firstname','Lastname','123456',NULL,'12/3/15 6:46 PM','guest@mail.com','false'),(6,'guest2','Firstname','Lastname','123456',NULL,'12/3/15 6:49 PM','guest2@mail.com','false'),(7,'guest3','test','test','123456',NULL,'12/3/15 6:51 PM','fdafda@dfda.com','false');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-12-04 19:45:20
+-- Dump completed on 2015-12-11 10:11:09

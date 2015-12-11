@@ -26,8 +26,9 @@ CREATE TABLE `user_votes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userID` int(11) DEFAULT NULL,
   `movieID` int(11) DEFAULT NULL,
+  `rating` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +37,7 @@ CREATE TABLE `user_votes` (
 
 LOCK TABLES `user_votes` WRITE;
 /*!40000 ALTER TABLE `user_votes` DISABLE KEYS */;
-INSERT INTO `user_votes` VALUES (34,1,17),(35,2,17),(36,3,17),(37,0,17),(38,3,40),(39,3,36),(40,3,43),(41,0,44),(42,0,40);
+INSERT INTO `user_votes` VALUES (34,1,17,0),(35,2,17,0),(36,3,17,0),(37,0,17,0),(38,3,40,0),(39,3,36,0),(40,3,43,0),(41,0,44,0),(42,0,40,0),(43,0,3,0),(44,0,19,0),(45,0,21,0),(46,0,35,10),(47,3,35,9),(48,0,43,9),(49,0,2,10),(50,0,34,10),(51,7,17,9),(52,7,35,9),(53,7,43,8),(54,0,38,10),(55,0,57,8),(56,0,36,10);
 /*!40000 ALTER TABLE `user_votes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-12-04 19:45:20
+-- Dump completed on 2015-12-11 10:11:09
